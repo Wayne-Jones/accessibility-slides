@@ -171,7 +171,7 @@
                 <!--</html>-->
               </code></pre>
             </div>
-            <div class="fragment fade-in-then-out">
+            <div class="fragment fade-in">
               <h3>Links dont have descriptive text</h3>
               <pre><code>
                 <!--<html>-->
@@ -196,7 +196,7 @@
         </section>
         <section>
           <h3>Incorrect use of alt text</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" width="200" height="200"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="200" height="200"/>
           <pre><code>
             <!--<html>-->
               <img src=".../SteveJobs.jpg" alt="steve jobs apple iphone ipad mac"/>
@@ -208,7 +208,110 @@
             <!--</html>-->
           </code></pre>
         </section>
-        
+      </section>
+      <section>
+        <section>
+          <h2>Keyboard Navigation</h2>
+          <p>There are folks that navigate the internet using other tools besides a mouse</p>
+          <p>It's important to have keyboard/tabbable functionality to allow users to go through different elements of the page.</p>
+          <p>Here is a guide on how to test for <a href="https://webaim.org/techniques/keyboard/#testing">Keyboard Accessibility.</a></p>
+        </section>
+        <section>
+          <h3>Incorrect navigation order</h3>
+          <p>There could be instances where the display of content is different from the source code or tab navigation which could confuse people who navigate via keyboard.</p>
+          <div class="r-stack">
+            <div class="fragment fade-in-then-out">
+              <pre><code>
+                <style>
+                  .box {
+                    display: flex;
+                    flex-direction: row-reverse;
+                  }
+                </style>
+                <div class="box">
+                    <div><a href="#">One</a></div>
+                    <div><a href="#">Two</a></div>
+                    <div><a href="#">Three</a></div>
+                </div>
+              </code></pre>
+            </div>
+            <div class="fragment fade-in-then-out">
+                <style>
+                  .box {
+                    display: flex;
+                    flex-direction: row-reverse;
+                  }
+                </style>
+                <div class="box">
+                    <div><a href="#">One</a></div>
+                    <div><a href="#">Two</a></div>
+                    <div><a href="#">Three</a></div>
+                </div>
+            </div>
+            <div class="fragment fade-in-then-out">
+              <pre><code>
+                <style>
+                  .box {
+                    display: flex;
+                    flex-direction: row;
+                  }
+                  .box :nth-child(1) { order: 2; }
+                  .box :nth-child(2) { order: 3; }
+                  .box :nth-child(3) { order: 1; }
+                </style>
+                <div class="box">
+                    <div><a href="#">One</a></div>
+                    <div><a href="#">Two</a></div>
+                    <div><a href="#">Three</a></div>
+                </div>
+              </code></pre>
+            </div>
+          </div>
+          
+        </section>
+        <section>
+          <h3>Making non-interactive elements keyboard focusable</h3>
+          <p>By default, links buttons and form controls are natively accessible for keyboard users.</p>
+          <p>It's best to avoid using tabindex whenever possible. Use links, buttons, or form controls for interactivity.</p>
+          <pre><code>
+            <div tabindex="0">Now this div tab is focusable</div>
+          </code></pre>
+        </section>
+      </section>
+      <section>
+        <h2>Color Contrast</h2>
+        <p>For visual impaired users, having the correct color contrast on websites is vital in order for them to see your content visibily.</p>
+        <p>You can utilize <a href="https://webaim.org/resources/contrastchecker/">WebAIM Color Contrast Picker</a> to compare foreground and background color palettes.</p>
+        <p>You want to aim for WCAG AA compliance for both normal and large text, ideally you would want to get AAA compliance.</p>
+      </section>
+      <section>
+        <section>
+          <h2>Multimedia Accessibility</h2>
+          <p>For multimedia such as videos, it's generally good practice to have captions/subtitles for videos.</p>
+          <p>If you're using iframes or embeds from videos such as Youtube or Vimeo, you can utilize the built in captioning system to make sure your video is accessible.</p>
+          <pre><code>
+            <video id="sample_video" width="800" height="600" controls>
+              <source src="sample_video.mp4" type="video/mp4">
+              <source src="sample_video.webm" type="video/webm">
+              <track label="English" kind="subtitles" srclang="en" src="REV_TRANSCRIPTION_V3.vtt" default>
+            </video>
+          </code></pre>
+        </section>
+        <section>
+          <h3>Other ways to make multimedia videos accessible</h3>
+          <p>Sign Language - Adding sign language so that deaf folks can get content in their native langage</p>
+          <p>Description of Visual Information - Provide description so that people who are blind and others who cannot see the video adequately get the visual information needed to understand the content.</p>
+          <p>Transcript - Providing a text version of speech and non-speech audio information. Descriptive transcripts would ideally provide text description of the visual information.</p>
+          <p>Accessible Players - Using accessible video/audio players such as <a href="https://ableplayer.github.io/ableplayer/">AblePlayer</a> would do most of the heavy lifting so developers don't have to use customized solutions to make a player accessible.</p>
+        </section>
+      </section>
+      <section>
+        <h2>Accessibility Testing</h2>
+        <p>Testing for accessibility isn't hard. Luckily there are some semi-automated solutions that would catch common accessibility issues.</p>
+        <p>WebAIM Wave</p>
+      </section>
+      <section>
+        <h2>Conclusion</h2>
       </section>
     </div>
   </div>

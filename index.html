@@ -51,27 +51,37 @@
         <section>
           <h2>Why Accessibility is Important</h2>
           <p>Inaccessible websites means that people with disabilities are denied equal access to get information.</p>
-          <p>It can exclude people just as much as a physical location that has steps at an entrance. In a way excluding
-            a person digitally is in a way a form of discrimination</p>
+          <p>Companies can be sued for not maintaining an accessible website </p>
+          <aside class="notes">
+            It can exclude people just as much as a physical location that has steps at an entrance. In a way excluding
+            a person digitally is in a way a form of discrimination.<br/>
+
+            In addition, companies could be held liable for failing to create an accessible website.
+          </aside>
         </section>
         <section>
           <h2>Americans with Disabilities Act (ADA)</h2>
-          <p>Legislation passed in 1990 and amended in 2008, is a federal civil rights law that prohibits discrimination
+          <p>ADA passed in 1990 and amended in 2008, is a federal civil rights law that prohibits discrimination
             against people with disabilities in everyday activities.</p>
           <p>The ADA applies to State and Local Goverments (Title II) as well as Businesses that are open to the public
-            (Title III).</p>
-          <p>Under Title III specifically, no individual may be discriminated against on the basis of disability with
-            regards to the full and equal enjoyment of the goods, services, facilities, or accommodations of any place
-            of public accommodation by any person who owns, leases, or operates a place of public accommodation.</p>
-          <p>While not specificially mentioning websites in the Legislation, through court precedence, this act is
-            assumed to extend beyond the physical space of businesses and governments - which would mean digital spaces
-            including websites. Though in some circuit courts the website would have to be connected to a physical
-            location whereas other circuit courts you can bring a lawsuit against an online-only business</p>
-          <p>Over the years there has been an increasing number of Title III lawsuits and in 2020 alone there has been
-            more than 2500 lawsuits regarding inaccessible websites</p>
+            (Title III).</p>          
+          <p>In 2020 alone there has been more than 2500 Title III lawsuits regarding inaccessible websites</p>
           <p>Source: <a
               href="https://www.adatitleiii.com/2021/04/federal-website-accessibility-lawsuits-increased-in-2020-despite-mid-year-pandemic-lull/">Federal
               Website Accessibility Lawsuits Increased in 2020 Despite Mid-Year Pandemic Lull</a></p>
+
+          <aside class="notes">
+            Under Title III specifically, no individual may be discriminated against on the basis of disability with
+            regards to the full and equal enjoyment of the goods, services, facilities, or accommodations of any place
+            of public accommodation by any person who owns, leases, or operates a place of public accommodation. <br/>
+
+            While not specificially mentioning websites in the Legislation, through court precedence, this act is
+              assumed to extend beyond the physical space of businesses and governments - which would mean digital spaces
+              including websites. Though in some circuit courts the website would have to be connected to a physical
+              location whereas other circuit courts you can bring a lawsuit against an online-only business. <br/>
+
+            There have been an increasing number of Title III lawsuits over the years.
+          </aside>
         </section>
         <section>
           <h2>Disability Facts</h2>
@@ -100,15 +110,22 @@
 
         <section>
           <h2>Common Barriers for Accessibility</h2>
-          <p>Time To Market - Because its a race to develop a fast viable working product. Accessibility is the last
-            thing on companies minds</p>
-          <p>Knowing how to test - One common complaint is that developers don't know how to test for accessibility
-            using assistive readers or tools</p>
-          <p>Time it takes to test - Another complaint is that companies say that it takes a while to build for
+          <p>Time To Market</p>
+          <p>Knowing how to test</p>
+          <p>Time it takes to test</p>
+          <p>Why improve on things you can't see</p>
+
+          <aside class="notes">
+            Time To Market - Because its a race to develop a fast viable working product. Accessibility is the last
+            thing on companies minds <br/>
+            Knowing how to test - One common complaint is that developers don't know how to test for accessibility
+            using assistive readers or tools <br/>
+            Time it takes to test - Another complaint is that companies say that it takes a while to build for
             accessibility. But if you build a website with accessibility in mind, it won't take up any more time to
-            develop.</p>
-          <p>Why improve on things you can't see - Just because you can't visually see the changes, doesn't mean that it
-            wouldn't impact the web experience for others</p>
+            develop. <br/>
+            Why improve on things you can't see - Just because you can't visually see the changes, doesn't mean that it
+            wouldn't impact the web experience for others
+          </aside>
         </section>
       </section>
       <section>
@@ -117,10 +134,13 @@
           <p>Semantic elements clearly describes it's meaning to both the browser and developer</p>
           <p>Non Semantic Elements: <code>div</code> and <code>span</code></p>
           <p>Semantic Elements: <code>header</code>, <code>footer</code>, <code>nav</code>, and <code>main</code></p>
-          <p>Some semantic elements can be used to describe the different parts of a web page</p>
-          <p>For screen reader users, using semantic elements the browser can clearly articulate to the user what HTML
+
+          <aside class="notes">
+            Some semantic elements can be used to describe the different parts of a web page <br/>
+            For screen reader users, using semantic elements the browser can clearly articulate to the user what HTML
             element they are on, if it's a heading they can navigate by headings. If it's a list item, it can describe
-            how many items are in the list.</p>
+            how many items are in the list.<br/>
+          </aside>
         </section>
         <section>
           <h2>Incorrect use of Semantic HTML</h2>
@@ -192,7 +212,10 @@
           <h2>Alternative Text for Images</h2>
           <p>Adding Alt Text to images improves accessibility for screen reader users</p>
           <p>In addition, having alt text on images can help improve on search ranking.</p>
-          <p>You don't need to add alt text for all images, only on images that provide context to the content or images that have text within it.</p>
+          <aside class="notes">
+            You don't need to add alt text for all images, only on images that provide context to the content or images that have text within it. <br/>
+            In some cases, there are companies that utilize alt text to stuff keywords for SEO purposes. Here is an example of an incorrect way of using alt text.
+          </aside>
         </section>
         <section>
           <h3>Incorrect use of alt text</h3>
@@ -308,10 +331,10 @@
       <section>
         <h2>Accessibility Testing</h2>
         <p>Testing for accessibility isn't hard. Luckily there are some semi-automated solutions that would catch common accessibility issues.</p>
-        <p>Linters / Static Checker: ESLint (jsx-a11y), <a href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter">Axe Accessibility Linter</a></p>
-        <p>Scanners <a href="https://wave.webaim.org/">WebAIM Wave</a></p>
+        <p>Linters / Static Checker: <a href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y">jsx-a11y</a>, <a href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter">Axe Accessibility Linter</a></p>
+        <p>Scanners <a href="https://wave.webaim.org/">WebAIM Wave</a>, <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a></p>
         <p>Libraries: <a href="https://github.com/dequelabs/axe-core">Axe Core</a>, <a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/react">Axe Core React</a></p>
-        
+        <p>Automated/Live Testing: <a href="https://saucelabs.com/">Sauce Labs</a>, <a href="">Ghost Inspector</a>
       </section>
       <section>
         <h2>Conclusion</h2>

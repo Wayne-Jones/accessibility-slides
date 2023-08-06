@@ -128,7 +128,7 @@
           </aside>
         </section>
       </section>
-      <section>
+      <section data-auto-animate>
         <section>
           <h2>Semantic HTML</h2>
           <p>Semantic elements clearly describes it's meaning to both the browser and developer</p>
@@ -142,69 +142,73 @@
             how many items are in the list.<br/>
           </aside>
         </section>
-        <section>
-          <h2>Incorrect use of Semantic HTML</h2>
-          <div class="r-stack">
-            <div class="fragment fade-in-then-out">
-              <h3>Incorrect Heading Order / Skipping Heading levels</h3>
-              <pre><code>
-                <!--<html>-->
-                <h1>How to Cook for Introverts</h1>
-                <h3>Ingredients you will need</h3>
-                <h2>Steps To Begin</h2>
-                <!--</html>-->
-              </code></pre>
-              <pre><code>
-                <!--<html>-->
-                <h1>How to Cook for Introverts</h1>
-                <h2>Ingredients you will need</h2>
-                <h3>Side story about me finding Ingredients</h3>
-                <h2>Steps To Begin</h2>
-                <!--</html>-->
-              </code></pre>
-            </div>
-            <div class="fragment fade-in-then-out">
-              <h3>Not Having an H1 on the Page (or Having more than 1 H1)</h3>
-              <pre><code>
-                <!--<html>-->
-                <h2>Steps To Begin</h2>
-                <!--</html>-->
-              </code></pre>
-              <pre><code>
-                <!--<html>-->
-                <h1 class="sr-only">How to Cook for Introverts</h1>
-                <h2>Steps To Begin</h2>
-                <!--</html>-->
-              </code></pre>
-            </div>
-            <div class="fragment fade-in-then-out">
-              <h3>Missing Form input labels</h3>
-              <pre><code>
-                <!--<html>-->
-                <input type="text" placeholder="Type Full Name Here" />
-                <!--</html>-->
-              </code></pre>
-              <pre><code>
-                <!--<html>-->
-                <label for="inputField">Full Name</label>
-                <input type="text" id="inputField" placeholder="Type Full Name Here"/>
-                <!--</html>-->
-              </code></pre>
-            </div>
-            <div class="fragment fade-in">
-              <h3>Links dont have descriptive text</h3>
-              <pre><code>
-                <!--<html>-->
-                  <p><a href="https://google.com">Click here</a> to go to google.</p>
-                <!--</html>-->
-              </code></pre>
-              <pre><code>
-                <!--<html>-->
-                  <p><a href="https://google.com">Google</a> to find out all the answers to your problems.</p>
-                <!--</html>-->
-              </code></pre>
-            </div>
-          </div>
+        <!--<h2>Incorrect use of Semantic HTML</h2>-->
+        <!--<h3>Incorrect Heading Order / Skipping Heading levels</h3>-->
+        <section data-auto-animate>          
+          <pre data-id="code-animation"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <h1>How to Cook for Introverts</h1>
+            <h3>Side story about me finding Ingredients</h3>
+            <h2>Steps To Begin</h2>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code-animation"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <h1>How to Cook for Introverts</h1>
+            <h2>Ingredients you will need</h2>
+            <h3>Side story about me finding Ingredients</h3>
+            <h2>Steps To Begin</h2>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <!--<h3>Not Having an H1 on the Page (or Having more than 1 H1)</h3>-->
+        <section data-auto-animate>
+          <pre data-id="code-animation2"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <h2>Steps To Begin</h2>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code-animation2"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <h1 class="sr-only">How to Cook for Introverts</h1>
+            <h2>Steps To Begin</h2>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <!--<h3>Missing Form input labels</h3>-->
+        <section data-auto-animate>
+          <pre data-id="code-animation3"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <input type="text" placeholder="Type Full Name Here" />
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code-animation3"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <label for="inputField">Full Name</label>
+            <input type="text" id="inputField" placeholder="Type Full Name Here"/>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <!--<h3>Links dont have descriptive text</h3>-->
+        <section data-auto-animate>
+          <pre data-id="code-animation4"><code data-trim data-line-numbers>
+            <!--<html>-->
+              <p><a href="https://google.com">Click here</a> to go to google.</p>
+            <!--</html>-->
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code-animation4"><code data-trim data-line-numbers>
+            <!--<html>-->
+              <p><a href="https://google.com">Google</a> to find out all the answers to your problems.</p>
+            <!--</html>-->
+          </code></pre>
         </section>
       </section>
       <section>

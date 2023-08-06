@@ -11,11 +11,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.27",
     "reveal.js": "^4.5.0",
-    "tailwindcss": "^3.3.1",
-    "vite": "^4.3.1"
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.8"
   }
 }

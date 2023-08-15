@@ -11,4 +11,4 @@ import Notes from 'reveal.js/plugin/notes/notes'
 import Zoom from 'reveal.js/plugin/zoom/zoom'
 
 const deck = new Reveal()
-deck.initialize({ hash: true, plugins: [ MarkDown, Highlight, Notes, Zoom ] })
+deck.initialize({ hash: true, plugins: [ MarkDown, Highlight, Notes, Zoom ], width: 1920, height: 1080 })

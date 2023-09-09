@@ -52,9 +52,10 @@
           <p>Companies can be sued for not maintaining an accessible website </p>
           <aside class="notes">
             Inaccessible websites exclude people just as much as a physical location that has steps at an entrance. In a way excluding
-            a person digitally is in a way a form of discrimination.<br/>
+            a person digitally is in a way a form of discrimination.<br/><br/>
 
-            In addition, companies could be held liable for failing to create an accessible website.
+            In addition, in the United States, companies could be held liable for failing to create an accessible website
+            due to the Americans with Disabilities Act.
           </aside>
         </section>
         <section data-background-image="https://www.computerbase.de/forum/attachments/giphy-46-gif.907929/"></section>
@@ -72,12 +73,12 @@
           <aside class="notes">
             Under Title III specifically, no individual may be discriminated against on the basis of disability with
             regards to the full and equal enjoyment of the goods, services, facilities, or accommodations of any place
-            of public accommodation by any person who owns, leases, or operates a place of public accommodation. <br/>
+            of public accommodation by any person who owns, leases, or operates a place of public accommodation. <br/><br/>
 
             While not specificially mentioning websites in the Legislation, through court precedence, this act is
-              assumed to extend beyond the physical space of businesses and governments - which would mean digital spaces
-              including websites. Though in some circuit courts the website would have to be connected to a physical
-              location whereas other circuit courts you can bring a lawsuit against an online-only business. <br/>
+            assumed to extend beyond the physical space of businesses and governments - which would mean digital spaces
+            including websites. Though in some circuit courts the website would have to be connected to a physical
+            location whereas other circuit courts you can bring a lawsuit against an online-only business. <br/><br/>
 
             There have been an increasing number of Title III lawsuits over the years.
           </aside>
@@ -124,6 +125,8 @@
             develop. <br/>
             Why improve on things you can't see - Just because you can't visually see the changes, doesn't mean that it
             wouldn't impact the web experience for others
+
+            Question to Audience: How many of yall have heard from your manager or company one of these four reasons w
           </aside>
         </section>
       </section>
@@ -146,51 +149,89 @@
         <section data-auto-animate>          
           <pre data-id="code-animation"><code data-trim data-line-numbers>
             <!--<html>-->
-            <h1>How to Cook for Introverts</h1>
-            <h3>Side story about me finding Ingredients</h3>
-            <h2>Steps To Begin</h2>
+            <!--<body>-->
+              <h1>How to Cook for Introverts</h1>
+              <h3>Side story about me finding Ingredients</h3>
+              <h2>Steps To Begin</h2>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            Let's say you have a website page that is a recipe for how to cook for introverts. And you mock up the template like so?
+            Does anybody here knows what's wrong with this markup?<br/>
+          </aside>
         </section>
         <section data-auto-animate>
+          <h2>Incorrect Heading Order / Skipping Heading levels</h2>
           <pre data-id="code-animation"><code data-trim data-line-numbers>
             <!--<html>-->
-            <h1>How to Cook for Introverts</h1>
-            <h2>Ingredients you will need</h2>
-            <h3>Side story about me finding Ingredients</h3>
-            <h2>Steps To Begin</h2>
+            <!--<body>-->
+              <h1>How to Cook for Introverts</h1>
+              <h2>Ingredients you will need</h2>
+              <h3>Side story about me finding Ingredients</h3>
+              <h2>Steps To Begin</h2>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
         </section>
         <!--<h3>Not Having an H1 on the Page (or Having more than 1 H1)</h3>-->
         <section data-auto-animate>
-          <pre data-id="code-animation2"><code data-trim data-line-numbers>
+          <pre data-id="code-animation2" class="w-1/2" ><code data-trim data-line-numbers>
             <!--<html>-->
-            <h2>Steps To Begin</h2>
+            <!--<body>-->
+              <h2>Ingredients you will need</h2>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <pre data-id="code-animation2" class="w-1/2"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <!--<body>-->
+              <h2>Ingredients you will need</h2>
+            <!--</body>-->
+            <!--</html>-->
+          </code></pre>
+          <aside class="notes">
+            Going off that same webpage example. There may be cases where heading level and styling are tightly coupled.
+            And you don't want an H1 displaying on the page because it doesn't look right. Unfortunately not having an H1 on a webpage
+            is an accessibility issue.<br/>
+          </aside>
         </section>
         <section data-auto-animate>
+          <h2>Not Having an H1 on the Page (or Having more than 1 H1)</h2>
           <pre data-id="code-animation2"><code data-trim data-line-numbers>
             <!--<html>-->
-            <h1 class="sr-only">How to Cook for Introverts</h1>
-            <h2>Steps To Begin</h2>
+            <!--<body>-->
+              <h1 class="sr-only">How to Cook for Introverts</h1>
+              <h2>Ingredients you will need</h2>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            One way to go about doing it is to have a screen reader only class where it's visually hidden from the user but 
+            is still readable for screen readers. A more helpful tip is to not have heading level and styling tightly coupled together.
+            So then you would be able to use heading levels without the dependency on styling.<br/>
+          </aside>
         </section>
         <!--<h3>Missing Form input labels</h3>-->
         <section data-auto-animate>
           <pre data-id="code-animation3"><code data-trim data-line-numbers>
             <!--<html>-->
-            <input type="text" placeholder="Type Full Name Here" />
+            <form>
+              <input type="text" placeholder="Type Full Name Here" />
+              <button type="submit">Submit</button>
+            </form>
+            
             <!--</html>-->
           </code></pre>
         </section>
         <section data-auto-animate>
           <pre data-id="code-animation3"><code data-trim data-line-numbers>
             <!--<html>-->
-            <label for="inputField">Full Name</label>
-            <input type="text" id="inputField" placeholder="Type Full Name Here"/>
+            <form>
+              <label for="inputField">Full Name</label>
+              <input type="text" id="inputField" placeholder="Type Full Name Here"/>
+              <button type="submit">Submit</button>
+            </form>
             <!--</html>-->
           </code></pre>
         </section>

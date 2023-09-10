@@ -96,6 +96,9 @@
           </ul>
           <p>Source: <a href="https://data.census.gov/table?q=vision+difficulty&y=2021&tid=ACSST1Y2021.S1810">2021 ACS
               Disability Characteristics</a></p>
+        </section>
+        <section>
+          <h2>Disability Facts Cont.</h2>
           <p>In WebAIM's Screen Reader User Survey in 2021, of those surveyed,</p>
           <ul>
             <li>92.3% of respondents use a screen reader due to a disability</li>
@@ -107,29 +110,30 @@
           </ul>
           <p>Source: <a href="https://webaim.org/projects/screenreadersurvey9/">WebAIM Screen Reader Survey #9</a></p>
         </section>
-
-        <section>
-          <h2>Common Barriers for Accessibility</h2>
-          <p>Time To Market</p>
-          <p>Knowing how to test</p>
-          <p>Time it takes to test</p>
-          <p>Why improve on things you can't see</p>
-
-          <aside class="notes">
-            Time To Market - Because its a race to develop a fast viable working product. Accessibility is the last
-            thing on companies minds <br/>
-            Knowing how to test - One common complaint is that developers don't know how to test for accessibility
-            using assistive readers or tools <br/>
-            Time it takes to test - Another complaint is that companies say that it takes a while to build for
-            accessibility. But if you build a website with accessibility in mind, it won't take up any more time to
-            develop. <br/>
-            Why improve on things you can't see - Just because you can't visually see the changes, doesn't mean that it
-            wouldn't impact the web experience for others
-
-            Question to Audience: How many of yall have heard from your manager or company one of these four reasons w
-          </aside>
-        </section>
       </section>
+
+      <section>
+        <h2>Common Barriers for Accessibility</h2>
+        <p>Time To Market</p>
+        <p>Knowing how to test</p>
+        <p>Time it takes to test</p>
+        <p>Why improve on things you can't see</p>
+
+        <aside class="notes">
+          Time To Market - Because its a race to develop a fast viable working product. Accessibility is the last
+          thing on companies minds <br/>
+          Knowing how to test - One common complaint is that developers don't know how to test for accessibility
+          using assistive readers or tools <br/>
+          Time it takes to test - Another complaint is that companies say that it takes a while to build for
+          accessibility. But if you build a website with accessibility in mind, it won't take up any more time to
+          develop. <br/>
+          Why improve on things you can't see - Just because you can't visually see the changes, doesn't mean that it
+          wouldn't impact the web experience for others
+
+          Question to Audience: How many of yall have heard from your manager or company one of these four reasons w
+        </aside>
+      </section>
+
       <section data-auto-animate>
         <section>
           <h2>Semantic HTML</h2>
@@ -184,11 +188,10 @@
             <!--</html>-->
           </code></pre>
           <pre data-id="code-animation2" class="w-1/2"><code data-trim data-line-numbers>
-            <!--<html>-->
-            <!--<body>-->
-              <h2>Ingredients you will need</h2>
-            <!--</body>-->
-            <!--</html>-->
+              h2 {
+                font-weight: 3rem;
+                font-family: arial;
+              }
           </code></pre>
           <aside class="notes">
             Going off that same webpage example. There may be cases where heading level and styling are tightly coupled.
@@ -202,9 +205,26 @@
             <!--<html>-->
             <!--<body>-->
               <h1 class="sr-only">How to Cook for Introverts</h1>
-              <h2>Ingredients you will need</h2>
+              <h2 class="big-text">Ingredients you will need</h2>
             <!--</body>-->
             <!--</html>-->
+          </code></pre>
+          <pre data-id="code-animation2" class="w-1/2"><code data-trim data-line-numbers>
+            .sr-only {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border-width: 0;
+            }
+            .big-text{
+              font-size: 3rem;
+              font-family: arial;
+            }
           </code></pre>
           <aside class="notes">
             One way to go about doing it is to have a screen reader only class where it's visually hidden from the user but 
@@ -216,39 +236,70 @@
         <section data-auto-animate>
           <pre data-id="code-animation3"><code data-trim data-line-numbers>
             <!--<html>-->
-            <form>
-              <input type="text" placeholder="Type Full Name Here" />
-              <button type="submit">Submit</button>
-            </form>
-            
+            <!--<body>-->
+              <form>
+                <input type="text" placeholder="Type Full Name Here" />
+                <button type="submit">Submit</button>
+              </form>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            Now lets say you have a form on a webpage where you enter your name and submit the form. Here's the markup {% for row in array %}
+            the form, can anybody point out what's missing with this mockup?<br/>
+          </aside>
         </section>
         <section data-auto-animate>
+          <h2>Missing Form input labels</h2>
           <pre data-id="code-animation3"><code data-trim data-line-numbers>
             <!--<html>-->
-            <form>
-              <label for="inputField">Full Name</label>
-              <input type="text" id="inputField" placeholder="Type Full Name Here"/>
-              <button type="submit">Submit</button>
-            </form>
+            <!--<body>-->
+              <form>
+                <label for="inputField">Full Name</label>
+                <input type="text" id="inputField" placeholder="Type Full Name Here"/>
+                <button type="submit">Submit</button>
+              </form>
+            <!--<body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            Form Input fields such as text fields, radio, checkboxes require labels for accessibility. To correctly attach a label 
+            to a input field, the input field must have an ID field (in this case it's an ID with the name inputfield) and the label has a 
+            for attribute matching that same ID name.<br/>
+          </aside>
         </section>
         <!--<h3>Links dont have descriptive text</h3>-->
         <section data-auto-animate>
           <pre data-id="code-animation4"><code data-trim data-line-numbers>
             <!--<html>-->
-              <p><a href="https://google.com">Click here</a> to go to google.</p>
+            <!--<body>-->
+              <p>
+                <a href="https://google.com">Click here</a> 
+                to go to google.
+              </p>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            This might be harder to spot but does anybody know what is wrong with this piece of code.<br/>
+          </aside>
         </section>
         <section data-auto-animate>
+          <h2>Links dont have descriptive text</h2>
           <pre data-id="code-animation4"><code data-trim data-line-numbers>
             <!--<html>-->
-              <p><a href="https://google.com">Google</a> to find out all the answers to your problems.</p>
+            <!--<body>-->
+              <p>
+                <a href="https://google.com">Google</a> 
+                to find out all the answers to your problems.
+              </p>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            When screenreaders read the link, it will say the text of the link. Having a text like "click here" does not tell 
+            the user exactly where this link navigates to. It is best to have descriptive text to better describe the navigation.<br/>
+          </aside>
         </section>
       </section>
       <section>
@@ -258,22 +309,38 @@
           <p>In addition, having alt text on images can help improve on search ranking.</p>
           <aside class="notes">
             You don't need to add alt text for all images, only on images that provide context to the content or images that have text within it. <br/>
-            In some cases, there are companies that utilize alt text to stuff keywords for SEO purposes. Here is an example of an incorrect way of using alt text.
+            In some cases, there are companies that utilize alt text to stuff keywords for SEO purposes.
           </aside>
         </section>
-        <section>
+        <section data-auto-animate>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
+          <pre data-id="code-animation5"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <!--<body>-->
+              <img src=".../SteveJobs.jpg" 
+              alt="steve jobs apple iphone ipad mac"/>
+            <!--</body>-->
+            <!--</html>-->
+          </code></pre>
+          <aside class="notes">
+            
+          </aside>
+        </section>
+        <section data-auto-animate>
           <h3>Incorrect use of alt text</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="200" height="200"/>
-          <pre><code>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
+          <pre data-id="code-animation5"><code data-trim data-line-numbers>
             <!--<html>-->
-              <img src=".../SteveJobs.jpg" alt="steve jobs apple iphone ipad mac"/>
+            <!--<body>-->
+              <img src=".../SteveJobs.jpg"
+              alt="apple founder, steve jobs, holding the iphone 4"/>
+            <!--</body>-->
             <!--</html>-->
           </code></pre>
-          <pre><code>
-            <!--<html>-->
-              <img src=".../SteveJobs.jpg" alt="apple founder, steve jobs, holding the iphone 4"/>
-            <!--</html>-->
-          </code></pre>
+          <aside class="notes">
+            In this example this shows the correct way to use alt tag for an image that's very descriptive. Also if there is 
+            text within an image if the text is relevant to the content of the page, that also should be in the alt attribute of the image.
+          </aside>
         </section>
       </section>
       <section>
@@ -283,12 +350,12 @@
           <p>It's important to have keyboard/tabbable functionality to allow users to go through different elements of the page.</p>
           <p>Here is a guide on how to test for <a href="https://webaim.org/techniques/keyboard/#testing">Keyboard Accessibility.</a></p>
         </section>
-        <section>
+        <section data-auto-animate>
           <h3>Incorrect navigation order</h3>
           <p>There could be instances where the display of content is different from the source code or tab navigation which could confuse people who navigate via keyboard.</p>
-          <div class="r-stack">
-            <div class="fragment fade-in-then-out">
-              <pre><code>
+
+            
+              <pre><code data-trim data-line-numbers>
                 <style>
                   .box {
                     display: flex;
@@ -301,8 +368,7 @@
                     <div><a href="#">Three</a></div>
                 </div>
               </code></pre>
-            </div>
-            <div class="fragment fade-in-then-out">
+
                 <style>
                   .box {
                     display: flex;
@@ -314,9 +380,7 @@
                     <div><a href="#">Two</a></div>
                     <div><a href="#">Three</a></div>
                 </div>
-            </div>
-            <div class="fragment fade-in-then-out">
-              <pre><code>
+              <pre><code data-trim data-line-numbers>
                 <style>
                   .box {
                     display: flex;
@@ -332,15 +396,13 @@
                     <div><a href="#">Three</a></div>
                 </div>
               </code></pre>
-            </div>
-          </div>
           
         </section>
-        <section>
+        <section data-auto-animate>
           <h3>Making non-interactive elements keyboard focusable</h3>
           <p>By default, links buttons and form controls are natively accessible for keyboard users.</p>
           <p>It's best to avoid using tabindex whenever possible. Use links, buttons, or form controls for interactivity.</p>
-          <pre><code>
+          <pre><code data-trim data-line-numbers>
             <div tabindex="0">Now this div tab is focusable</div>
           </code></pre>
         </section>
@@ -356,7 +418,7 @@
           <h2>Multimedia Accessibility</h2>
           <p>For multimedia such as videos, it's generally good practice to have captions/subtitles for videos.</p>
           <p>If you're using iframes or embeds from videos such as Youtube or Vimeo, you can utilize the built in captioning system to make sure your video is accessible.</p>
-          <pre><code>
+          <pre><code data-trim data-line-numbers>
             <video id="sample_video" width="800" height="600" controls>
               <source src="sample_video.mp4" type="video/mp4">
               <source src="sample_video.webm" type="video/webm">

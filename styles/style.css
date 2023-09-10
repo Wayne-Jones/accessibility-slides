@@ -14,3 +14,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+code{
+  font-size: 40px;
+  line-height: 1.1;
+}

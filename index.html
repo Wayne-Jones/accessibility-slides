@@ -18,7 +18,7 @@
       <section>
         <div class="flex items-center justify-center">
           <div class="w-1/2">
-            <img class="w-full" src="https://placekitten.com/450/300" alt="Image of a cat" />
+            <img class="w-full" src="https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/362990109_10160666921598540_2143955536455485443_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Qm4Lr_5cDsoAX8MrFGr&_nc_ht=scontent-lga3-1.xx&oh=00_AfA4nQLPm5IIuvPe0GgxoAUrE2ephWaO9PB3KcDPSD-Awg&oe=650CE82A" alt="Image of Wayne Jones in a grey t-shirt" />
           </div>
           <div class="fragment w-1/2">
             <p>Wayne Jones</p>
@@ -32,12 +32,15 @@
             <a class="block" href="http://twitch.tv/NamiKuro">
               <i class="fa-brands fa-twitch"></i>
               NamiKuro</a>
+            <a class="block" href="http://twitter.com/wayneoflife">
+              <i class="fa-brands fa-twitter"></i><i class="fa-brands fa-x-twitter"></i>
+              WayneOfLife</a>
           </div>
           <aside class="notes">
             I'm Wayne Jones, I'm a software engineer, aspiring developer advocate currently at [insert company here]
             which means I'm currently looking for my next role. So if your company is looking for a Software Engineer
-            with over 9 years of experience leading your team. You can reach me at LinkedIn, Github and I also have a Twitch Channel
-            where I stream games but also stream myself coding.
+            with over 9 years of experience leading your team. You can reach me at LinkedIn and Github at Username Wayne-Jones, I'm on Twitter as WayneOfLife and I also have a Twitch Channel
+            where I stream games but also stream myself coding from time to time.
           </aside>
         </div>
       </section>
@@ -168,7 +171,8 @@
           </code></pre>
           <aside class="notes">
             Let's say you have a website page that is a recipe for how to cook for introverts. And you mock up the template like so?
-            Does anybody here knows what's wrong with this markup?<br/>
+            Does anybody here knows what's wrong with this markup?<br/><br/>
+            This accessibility issue is known as Incorrect Heading Order. You can also have a case where Heading Levels are also skipped.
           </aside>
         </section>
         <section data-auto-animate>
@@ -183,6 +187,10 @@
             <!--</body>-->
             <!--</html>-->
           </code></pre>
+          <aside class="notes">
+            In order to resolve this issue you would need to have heading orders go in the correct place from H1 down to H6. In this case adding 
+            an H2 fixes the issue of incorrect heading order.
+          </aside>
         </section>
         <!--<h3>Not Having an H1 on the Page (or Having more than 1 H1)</h3>-->
         <section data-auto-animate>
@@ -195,14 +203,16 @@
           </code></pre>
           <pre data-id="code-animation2" class="w-1/2"><code data-trim data-line-numbers>
               h2 {
-                font-weight: 3rem;
+                font-size: 3rem;
+                font-weight: 400;
                 font-family: arial;
               }
           </code></pre>
           <aside class="notes">
             Going off that same webpage example. There may be cases where heading level and styling are tightly coupled.
-            And you don't want an H1 displaying on the page because it doesn't look right. Unfortunately not having an H1 on a webpage
-            is an accessibility issue.<br/>
+            In this example, an H2 has a font-family, font-size and font-weight attached to it. In addition, there is no h1 markup on this page.
+            Because let's say the styling for an H1 doesn't fit the look youre going for. <br/><br/>
+            Unfortunately not having an H1 on a webpage is an accessibility issue. In addition, having too many H1s is also an accessibility issue.<br/>
           </aside>
         </section>
         <section data-auto-animate>
@@ -229,13 +239,15 @@
             }
             .big-text{
               font-size: 3rem;
+              font-weight: 400;
               font-family: arial;
             }
           </code></pre>
           <aside class="notes">
-            One way to go about doing it is to have a screen reader only class where it's visually hidden from the user but 
+            In order to resolve this issue, one way to go about doing it is to have a screen reader only class where it's visually hidden from the user but 
             is still readable for screen readers. A more helpful tip is to not have heading level and styling tightly coupled together.
-            So then you would be able to use heading levels without the dependency on styling.<br/>
+            So then you would be able to use heading levels without the dependency on styling.<br/><br/>
+            In this solution the H2 has a class of big-text, and the css class of big-text has the same styling properties as before.
           </aside>
         </section>
         <!--<h3>Missing Form input labels</h3>-->
@@ -251,7 +263,7 @@
             <!--</html>-->
           </code></pre>
           <aside class="notes">
-            Now lets say you have a form on a webpage where you enter your name and submit the form. Here's the markup {% for row in array %}
+            Now lets say you have a form on a webpage where you enter your name and submit the form. Here's the markup for
             the form, can anybody point out what's missing with this mockup?<br/>
           </aside>
         </section>
@@ -287,7 +299,10 @@
             <!--</html>-->
           </code></pre>
           <aside class="notes">
-            This might be harder to spot but does anybody know what is wrong with this piece of code.<br/>
+            For this markup there is a link that says Click here which is surrounded by the anchor tag. I know some people developers that start off might code 
+            a navigation or a link this way. Unfortunately this is also an accessibility issue known as Links that don't have descriptive text.<br/><br/>
+            When screenreaders read the link, it will say the text of the link. Having a text like "click here" does not tell 
+            the user exactly where this link navigates to. It is best to have descriptive text to better describe the navigation.
           </aside>
         </section>
         <section data-auto-animate>
@@ -303,8 +318,7 @@
             <!--</html>-->
           </code></pre>
           <aside class="notes">
-            When screenreaders read the link, it will say the text of the link. Having a text like "click here" does not tell 
-            the user exactly where this link navigates to. It is best to have descriptive text to better describe the navigation.<br/>
+            So in order to resolve the issue we changed "Click here" to "Google" in order to tell the user where this link navigates to.<br/>
           </aside>
         </section>
       </section>
@@ -314,12 +328,12 @@
           <p>Adding Alt Text to images improves accessibility for screen reader users</p>
           <p>In addition, having alt text on images can help improve on search ranking.</p>
           <aside class="notes">
-            You don't need to add alt text for all images, only on images that provide context to the content or images that have text within it. <br/>
-            In some cases, there are companies that utilize alt text to stuff keywords for SEO purposes.
+            You don't need to add alt text for all images, only on images that provide context to the content or images that have text within it. <br/><br/>
+            While having alt text on images can improve search ranking, there are cases where companies use alt text to stuff keywords for SEO purposes.
           </aside>
         </section>
         <section data-auto-animate>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
+          <img class="!m-0 !mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
           <pre data-id="code-animation5"><code data-trim data-line-numbers>
             <!--<html>-->
             <!--<body>-->
@@ -329,17 +343,18 @@
             <!--</html>-->
           </code></pre>
           <aside class="notes">
-            
+            In this example, it's an image of Steve Jobs and the alt tag here is used to stuff additional keywords. Which is an incorrect use of alt text.<br/><br/>
+            Question to audience: Does anybody here have an example of a correct alt that could be used for this picture?
           </aside>
         </section>
         <section data-auto-animate>
           <h3>Incorrect use of alt text</h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
+          <img class="!m-0 !mx-auto" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg" alt="apple founder, steve jobs, holding the iphone 4" width="500" height="500"/>
           <pre data-id="code-animation5"><code data-trim data-line-numbers>
             <!--<html>-->
             <!--<body>-->
               <img src=".../SteveJobs.jpg"
-              alt="apple founder, steve jobs, holding the iphone 4"/>
+              alt="Apple CEO Founder, Steve Jobs is holding the iPhone 4"/>
             <!--</body>-->
             <!--</html>-->
           </code></pre>
@@ -355,6 +370,10 @@
           <p>There are folks that navigate the internet using other tools besides a mouse</p>
           <p>It's important to have keyboard/tabbable functionality to allow users to go through different elements of the page.</p>
           <p>Here is a guide on how to test for <a href="https://webaim.org/techniques/keyboard/#testing">Keyboard Accessibility.</a></p>
+          <aside class="notes">
+            The ability to navigate the web by keyboard is vital to people with disabilities. It is even more imertative that they are able to 
+            navigate it via keyboard tabble functionality in a seamless way. WebAIM has a nice guide on how to test for Keyboard Accessibility.
+          </aside>
         </section>
         <section data-auto-animate>
           <h3>Incorrect navigation order</h3>

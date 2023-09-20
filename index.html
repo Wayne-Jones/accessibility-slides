@@ -35,6 +35,9 @@
             <a class="block" href="http://twitter.com/wayneoflife">
               <i class="fa-brands fa-twitter"></i><i class="fa-brands fa-x-twitter"></i>
               WayneOfLife</a>
+            <a class="block" href="http://threads.com/wayneoflife">
+              <i class="fa-brands fa-threads"></i>
+              WayneOfLife</a>
           </div>
           <aside class="notes">
             I'm Wayne Jones, I'm a software engineer, aspiring developer advocate currently at [insert company here]
@@ -94,30 +97,55 @@
         <section data-background-image="https://www.computerbase.de/forum/attachments/giphy-46-gif.907929/"></section>
         <section>
           <h2>Disability Facts</h2>
-          <p>According to the 2021 American Community Survey, out of an estimated 320M people</p>
-          <ul>
-            <li>42M people live with disabilities
-              <ul>
-                <li>11M (3.6%) people live with visual impairments</li>
-                <li>8M (2.5%) people live with hearing impairments</li>
-              </ul>
-            </li>
-          </ul>
+          <h3>2021 American Community Survey</h3>
+          <div class="w-[800px] mx-auto"><canvas id="acs1" class="mx-auto"></canvas></div>
+          
           <p>Source: <a href="https://data.census.gov/table?q=vision+difficulty&y=2021&tid=ACSST1Y2021.S1810">2021 ACS
               Disability Characteristics</a></p>
+          
+          <aside class="notes">
+            According to the 2021 American Community Survey, out of an estimated 320M people in the US, about 42M live with disabilities (13.1% of the population).
+          </aside>
         </section>
         <section>
-          <h2>Disability Facts Cont.</h2>
-          <p>In WebAIM's Screen Reader User Survey in 2021, of those surveyed,</p>
-          <ul>
-            <li>92.3% of respondents use a screen reader due to a disability</li>
-            <li>46.3% of those said they used their primary screen reader due to existing comfort/expertise followed by
-              29.5% said they use it for the features</li>
-            <li>Increasing trend of screen reader usage on mobile devices from 67% in 2010 to 90% in 2021</li>
-            <li>On Desktop popular screen readers include: JAWS, NVDA, followed by VoiceOver. On Mobile, Voiceover was
-              the most popular and heavily used followed by Talkback and Voice Assistant</li>
-          </ul>
+          <h2>Disability Facts</h2>
+          <h3>2021 American Community Survey</h3>
+          <div class="w-[800px] mx-auto"><canvas id="acs2" class="mx-auto"></canvas></div>
+          <p>Source: <a href="https://data.census.gov/table?q=vision+difficulty&y=2021&tid=ACSST1Y2021.S1810">2021 ACS
+            Disability Characteristics</a></p>
+          <aside class="notes">
+            Out of the 42M people with disabilities, 11M or 3.6% of the population live with visual impairments while 8M or 2.5% of the population
+            live with hearing impairments.
+          </aside>
+        </section>
+        <section>
+          <h2>Disability Facts</h2>
+          <h3>WebAIM's Screen Reader Survey</h3>
+          <div class="w-[1200px] mx-auto"><canvas id="webaim1" class="mx-auto"></canvas></div>
           <p>Source: <a href="https://webaim.org/projects/screenreadersurvey9/">WebAIM Screen Reader Survey #9</a></p>
+          <aside class="notes">
+            In WebAIM's Screen reader user survey in 2021, of those surveyed, 92.3% of respondents say they use a screen reader due to a disability.
+            There has been an increasing trend of screen reader usage on mobile devices. As you can see from the chart, it increased from
+            67% in 2010 to 90% in 2021.
+          </aside>
+        </section>
+        <section>
+          <h2>Disability Facts</h2>
+          <h3>WebAIM's Screen Reader Survey</h3>
+          <div class="w-[1200px] mx-auto"><canvas id="webaim2" class="mx-auto"></canvas></div>
+          <p>Source: <a href="https://webaim.org/projects/screenreadersurvey9/">WebAIM Screen Reader Survey #9</a></p>
+          <aside class="notes">
+            On Desktop popular screen readers include: JAWS, NVDA, followed by VoiceOver.
+          </aside>
+        </section>
+        <section>
+          <h2>Disability Facts</h2>
+          <h3>WebAIM's Screen Reader Survey</h3>
+          <div class="w-[1200px] mx-auto"><canvas id="webaim3" class="mx-auto"></canvas></div>
+          <p>Source: <a href="https://webaim.org/projects/screenreadersurvey9/">WebAIM Screen Reader Survey #9</a></p>
+          <aside class="notes">
+            On Mobile, Voiceover was the most popular and heavily used followed by Talkback and Voice Assistant.
+          </aside>
         </section>
       </section>
 
@@ -377,59 +405,70 @@
         </section>
         <section data-auto-animate>
           <h3>Incorrect navigation order</h3>
-          <p>There could be instances where the display of content is different from the source code or tab navigation which could confuse people who navigate via keyboard.</p>
-
-            
-              <pre><code data-trim data-line-numbers>
-                <style>
-                  .box {
-                    display: flex;
-                    flex-direction: row-reverse;
-                  }
-                </style>
-                <div class="box">
-                    <div><a href="#">One</a></div>
-                    <div><a href="#">Two</a></div>
-                    <div><a href="#">Three</a></div>
-                </div>
-              </code></pre>
-
-                <style>
-                  .box {
-                    display: flex;
-                    flex-direction: row-reverse;
-                  }
-                </style>
-                <div class="box">
-                    <div><a href="#">One</a></div>
-                    <div><a href="#">Two</a></div>
-                    <div><a href="#">Three</a></div>
-                </div>
-              <pre><code data-trim data-line-numbers>
-                <style>
-                  .box {
-                    display: flex;
-                    flex-direction: row;
-                  }
-                  .box :nth-child(1) { order: 2; }
-                  .box :nth-child(2) { order: 3; }
-                  .box :nth-child(3) { order: 1; }
-                </style>
-                <div class="box">
-                    <div><a href="#">One</a></div>
-                    <div><a href="#">Two</a></div>
-                    <div><a href="#">Three</a></div>
-                </div>
-              </code></pre>
-          
+          <pre data-id="code-animation6"><code data-trim data-line-numbers>
+            <style>
+              .box {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+            </style>
+          </code></pre>
+          <pre data-id="code-animation6"><code data-trim data-line-numbers>
+            <style>
+              .box {
+                display: grid;
+              }
+              .box :nth-child(1) { order: 3; }
+              .box :nth-child(2) { order: 2; }
+              .box :nth-child(3) { order: 1; }
+            </style>
+          </code></pre>
+          <aside class="notes">
+            There could be instances where the display of content is different from the source code or tab navigation which could confuse people who navigate via keyboard.
+            Here are some examples of ways to reorder content in CSS using both flexbox's flex direction and the order property.
+          </aside>
+        </section>
+        <section data-auto-animate>
+          <h3>Incorrect navigation order</h3>
+          <pre data-id="code-animation7"><code data-trim data-line-numbers>
+            <!--<html>-->
+            <!--<body>-->
+            <div class="box">
+              <div><a href="#">One</a></div>
+              <div><a href="#">Two</a></div>
+              <div><a href="#">Three</a></div>
+            </div>
+            <!--</body>-->
+            <!--</html>-->
+          </code></pre>
+          <style>
+            .box {
+              display: flex;
+              flex-direction: column-reverse;
+            }
+          </style>
+          <div class="box">
+            <div><a href="#">One</a></div>
+            <div><a href="#">Two</a></div>
+            <div><a href="#">Three</a></div>
+          </div>
+          <aside class="notes">
+            With this HTML markup you have a class of box followed by three div children with links that say One Two and Three. This is the output
+            ordering of those divs with the styling property from the last slide. Now if I try to navigate through the divs by tabbing, the first focusable
+            element is the link that has One in it. It will then focus to the link labeled as two, then three.<br/><br/>
+            You can see how this could be confusing to people who navigate via keyboard because their focusable element could be jumping all around the page. It's best not to use 
+            these properties and instead have the content markup match the order that you want the content to be presented.
+          </aside>  
         </section>
         <section data-auto-animate>
           <h3>Making non-interactive elements keyboard focusable</h3>
-          <p>By default, links buttons and form controls are natively accessible for keyboard users.</p>
-          <p>It's best to avoid using tabindex whenever possible. Use links, buttons, or form controls for interactivity.</p>
           <pre><code data-trim data-line-numbers>
             <div tabindex="0">Now this div tab is focusable</div>
           </code></pre>
+          <div tabindex="0">Now this div tab is focusable</div>
+          <aside class="notes">
+            By default, links buttons and form controls are natively accessible for keyboard users. It's best to avoid using tabindex whenever possible. Use links, buttons, or form controls for interactivity.
+          </aside>
         </section>
       </section>
       <section>
@@ -441,8 +480,7 @@
       <section>
         <section>
           <h2>Multimedia Accessibility</h2>
-          <p>For multimedia such as videos, it's generally good practice to have captions/subtitles for videos.</p>
-          <p>If you're using iframes or embeds from videos such as Youtube or Vimeo, you can utilize the built in captioning system to make sure your video is accessible.</p>
+          
           <pre><code data-trim data-line-numbers>
             <video id="sample_video" width="800" height="600" controls>
               <source src="sample_video.mp4" type="video/mp4">
@@ -450,6 +488,12 @@
               <track label="English" kind="subtitles" srclang="en" src="REV_TRANSCRIPTION_V3.vtt" default>
             </video>
           </code></pre>
+          <aside class="notes">
+            For multimedia such as videos, it's generally good practice to have captions/subtitles for videos. In this example markup
+            we use the built in video element which has two source elements for video (which you can use to switch between a mp4 version of a file and a webm compressed version).
+            It also has a track element where we can load our vtt file for subtitles. <br/><br/>
+            If you're using iframes or embeds from videos such as Youtube or Vimeo, you can utilize the built in captioning system to make sure your video is accessible.
+          </aside>
         </section>
         <section>
           <h3>Other ways to make multimedia videos accessible</h3>
@@ -461,18 +505,49 @@
       </section>
       <section>
         <h2>Accessibility Testing</h2>
-        <p>Testing for accessibility isn't hard. Luckily there are some semi-automated solutions that would catch common accessibility issues.</p>
         <p>Linters / Static Checker: <a href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y">jsx-a11y</a>, <a href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter">Axe Accessibility Linter</a></p>
         <p>Scanners <a href="https://wave.webaim.org/">WebAIM Wave</a>, <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a></p>
         <p>Libraries: <a href="https://github.com/dequelabs/axe-core">Axe Core</a>, <a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/react">Axe Core React</a></p>
         <p>Automated/Live Testing: <a href="https://saucelabs.com/">Sauce Labs</a>, <a href="">Ghost Inspector</a>
+        <aside class="notes">
+          Luckily there are some semi-automated solutions that would catch common accessibility issues. Here are some examples of things that I use in my developer workflow.
+          You as a developer would still have to test manually as this isn't an end-all be-all solution. In conclusion, testing for accessibility isn't hard and shouldn't add more development time
+          if done correctly the first time. I hope this talk you were able to take something from this and are able to incorporate accessibility in your workflow.
+        </aside>
       </section>
       <section>
-        <h2>Conclusion</h2>
+        <h2>Thank you</h2>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3">
+            <img class="w-full" src="https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgist.github.com%2FWayne-Jones%2Fbf2c3216b9c371e4f2b5bf3d80135310&chs=180x180&choe=UTF-8&chld=L|2" alt="QR Code for more resources"/>
+          </div>
+          <div class="w-1/3">
+            <img class="w-full" src="https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/362990109_10160666921598540_2143955536455485443_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=Qm4Lr_5cDsoAX8MrFGr&_nc_ht=scontent-lga3-1.xx&oh=00_AfA4nQLPm5IIuvPe0GgxoAUrE2ephWaO9PB3KcDPSD-Awg&oe=650CE82A" alt="Image of Wayne Jones in a grey t-shirt" />
+          </div>
+          <div class="w-1/3">
+            <p>Wayne Jones</p>
+            <p>Software Engineer at [Insert Company Here]</p>
+            <a class="block" href="http://github.com/Wayne-Jones">
+              <i class="fa-brands fa-github"></i>
+              Wayne-Jones</a>
+            <a class="block" href="http://linkedin.com/in/Wayne-Jones">
+              <i class="fa-brands fa-linkedin"></i>
+              Wayne-Jones</a>
+            <a class="block" href="http://twitch.tv/NamiKuro">
+              <i class="fa-brands fa-twitch"></i>
+              NamiKuro</a>
+            <a class="block" href="http://twitter.com/wayneoflife">
+              <i class="fa-brands fa-twitter"></i><i class="fa-brands fa-x-twitter"></i>
+              WayneOfLife</a>
+            <a class="block" href="http://threads.com/wayneoflife">
+              <i class="fa-brands fa-threads"></i>
+              WayneOfLife</a>
+          </div>
+        </div>
       </section>
     </div>
   </div>
   <script type="module" src="/main.js"></script>
+  <script type="module" src="scripts/charts.js"></script>
 </body>
-
 </html>
